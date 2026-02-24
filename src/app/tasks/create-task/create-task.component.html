@@ -1,0 +1,60 @@
+<app-navbar></app-navbar>
+
+<main class="container">
+    <div class="card">
+        <h2>Create Task</h2>
+
+        <form (submit)="onSave($event)">
+            <div class="input-group">
+                <label>Title</label>
+                <input type="text" placeholder="Title" required>
+            </div>
+
+            <div class="input-group">
+                <label>Description</label>
+                <textarea placeholder="Description" required></textarea>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <label>Status</label>
+                    <select>
+                        <option>TODO</option>
+                        <option>IN PROGRESS</option>
+                        <option>DONE</option>
+                    </select>
+                </div>
+
+                <div class="col">
+                    <label>Priority</label>
+                    <select>
+                        <option>LOW</option>
+                        <option selected>MEDIUM</option>
+                        <option>HIGH</option>
+                    </select>
+                </div>
+
+                <div class="col">
+                    <label>Due Date</label>
+                    <input type="date">
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="save-btn">Save Task</button>
+                <button type="button" class="cancel-btn" (click)="onCancel()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-links">
+        <span>Service</span>
+        <span>Support</span>
+        <span>Company</span>
+        <span>Legal</span>
+        <span>Join Us</span>
+    </div>
+    <p>Design with love © TaskFlow 2026. All rights reserved</p>
+</footer>

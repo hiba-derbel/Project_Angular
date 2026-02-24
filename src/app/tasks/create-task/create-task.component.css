@@ -1,0 +1,135 @@
+/* Container & Card */
+.container {
+    padding-top: 150px;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+.card {
+    background-color: #F7F4E7;
+    width: 100%;
+    max-width: 700px;
+    padding: 50px;
+    border-radius: 40px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.card h2 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+/* Form Elements */
+.input-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 12px 15px;
+    border: none;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    font-size: 14px;
+    outline: none;
+}
+
+textarea {
+    height: 100px;
+    resize: none;
+}
+
+.row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.col {
+    flex: 1;
+}
+
+/* Buttons */
+.form-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.save-btn {
+    background-color: #9CAB84;
+    color: #FFFFFF;
+    border: none;
+    padding: 12px 40px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    min-width: 150px;
+    transition: transform 0.2s;
+}
+
+.save-btn:hover {
+    transform: scale(1.05);
+}
+
+.cancel-btn {
+    background-color: #D1D5DB;
+    color: #4B5563;
+    border: none;
+    padding: 8px 30px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.cancel-btn:hover {
+    background-color: #c4c9d1;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px;
+    color: #888;
+    font-size: 13px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding-top: 180px;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .card {
+        padding: 30px 20px;
+        width: 95%;
+    }
+}

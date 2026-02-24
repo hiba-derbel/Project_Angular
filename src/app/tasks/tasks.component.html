@@ -1,0 +1,84 @@
+<app-navbar></app-navbar>
+
+<main class="tasks-container">
+    <div class="task-header-card">
+        <div class="title-section">
+            <div class="icon-box"><i class="fas fa-folder-open"></i></div>
+            <h2>Task List</h2>
+        </div>
+        <a routerLink="/tasks/create" class="create-task-btn">Create Task</a>
+    </div>
+
+    <div class="search-section">
+        <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" placeholder="Search">
+        </div>
+    </div>
+
+    <div class="filters-container">
+        <div class="filter-box">
+            <label>Status</label>
+            <details class="custom-dropdown-details">
+                <summary>All <i class="fas fa-chevron-down"></i></summary>
+                <div class="dropdown-content">
+                    <label class="dropdown-item">
+                        <span><span class="dot todo"></span> Todo</span>
+                        <input type="radio" name="status">
+                    </label>
+                    <label class="dropdown-item">
+                        <span><span class="dot progress"></span> In Progress</span>
+                        <input type="radio" name="status">
+                    </label>
+                    <label class="dropdown-item">
+                        <span><span class="dot done"></span> Done</span>
+                        <input type="radio" name="status">
+                    </label>
+                </div>
+            </details>
+        </div>
+
+        <div class="filter-box">
+            <label>Priority</label>
+            <details class="custom-dropdown-details">
+                <summary>All <i class="fas fa-chevron-down"></i></summary>
+                <div class="dropdown-content">
+                    <label class="dropdown-item">High <input type="radio" name="prio"></label>
+                    <label class="dropdown-item">Medium <input type="radio" name="prio"></label>
+                    <label class="dropdown-item">Low <input type="radio" name="prio"></label>
+                </div>
+            </details>
+        </div>
+    </div>
+
+    <div class="task-item-card">
+        <div class="task-info">
+            <h3>Task 1</h3>
+            <p class="description">Design and refine user interface layouts in Figma, creating intuitive, visually
+                consistent, and user-friendly digital experiences.</p>
+            <div class="task-footer">
+                <div class="action-btns">
+                    <button class="edit-btn">Edit</button>
+                    <button class="delete-btn">Delete</button>
+                </div>
+                <div class="tags-section">
+                    <span class="status-tag">DONE</span>
+                    <span class="priority-text">Priority: HIGH</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pagination">
+        <button class="page-btn">Prev</button>
+        <span class="page-info">Page 1/1</span>
+        <button class="page-btn">Next</button>
+    </div>
+</main>
+
+<footer class="footer">
+    <div class="footer-links">
+        <span>Service</span><span>Support</span><span>Company</span><span>Legal</span><span>Join Us</span>
+    </div>
+    <p class="copyright">Design with love © TaskFlow 2026. All rights reserved</p>
+</footer>

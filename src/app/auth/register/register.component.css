@@ -1,0 +1,120 @@
+/* Nav Bar */
+.navbar {
+    background-color: #F7F4E7;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.05);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 800;
+    color: #1a1a1a;
+}
+
+.logo-t,
+.logo-f {
+    color: #9CAB84;
+}
+
+
+.nav-login-btn {
+    background-color: #9CAB84;
+    color: #1a1a1a;
+    text-decoration: none;
+    padding: 8px 25px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: opacity 0.3s;
+}
+
+
+.register-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 100px;
+}
+
+.register-card {
+    background-color: #F7F4E7;
+    padding: 60px 40px;
+    border-radius: 50px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.register-header i {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: #1a1a1a;
+}
+
+.register-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 35px;
+    color: #000;
+}
+
+
+.input-group {
+    margin-bottom: 18px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 16px 20px;
+    border: 1px solid #EAEAEA;
+    border-radius: 4px;
+    background-color: #FFFFFF;
+    font-size: 15px;
+    outline: none;
+    text-align: left;
+}
+
+
+.submit-btn {
+    background-color: #9CAB84;
+    color: #FFFFFF;
+    border: none;
+    padding: 14px 50px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: transform 0.2s;
+}
+
+.submit-btn:hover {
+    transform: scale(1.02);
+}
+
+
+.login-link-text {
+    margin-top: 20px;
+    font-size: 13px;
+    color: #A0A0A0;
+    line-height: 1.6;
+}
+
+.login-link-text a {
+    color: #A0A0A0;
+    text-decoration: none;
+    font-weight: 500;
+}

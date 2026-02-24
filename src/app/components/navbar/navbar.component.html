@@ -1,0 +1,25 @@
+<nav class="navbar">
+    <div class="nav-left">
+        <div class="logo" routerLink="/">
+            <span class="logo-t">T</span>ask<span class="logo-f">F</span>low.
+        </div>
+        <ul class="nav-links">
+            <li><a routerLink="/dashboard" routerLinkActive="active">Dashboard</a></li>
+            <li><a routerLink="/tasks" routerLinkActive="active">Tasks</a></li>
+        </ul>
+    </div>
+
+    <div class="nav-right">
+        <div class="notifications">
+            <i class="fas fa-bell"></i>
+            <span class="badge">12</span>
+        </div>
+        <div class="user-profile">
+            <img src="https://via.placeholder.com/35" alt="User Avatar">
+            <span class="username">Bilel(USER)</span>
+        </div>
+        <button class="logout-btn" (click)="onLogout()">
+            <i class="fas fa-sign-out-alt"></i> LOGOUT
+        </button>
+    </div>
+</nav>
