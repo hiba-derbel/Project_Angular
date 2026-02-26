@@ -12,7 +12,12 @@
     <div class="search-section">
         <div class="search-box">
             <i class="fas fa-search"></i>
-            <input type="text" placeholder="Search">
+            <input
+                type="text"
+                placeholder="Search"
+                [ngModel]="searchTerm"
+                (ngModelChange)="onSearchChange($event)"
+            >
         </div>
     </div>
 
@@ -24,15 +29,27 @@
                 <div class="dropdown-content">
                     <label class="dropdown-item">
                         <span><span class="dot todo"></span> Todo</span>
-                        <input type="radio" name="status">
+                        <input
+                            type="radio"
+                            name="status"
+                            (change)="onStatusChange('To do')"
+                        >
                     </label>
                     <label class="dropdown-item">
                         <span><span class="dot progress"></span> In Progress</span>
-                        <input type="radio" name="status">
+                        <input
+                            type="radio"
+                            name="status"
+                            (change)="onStatusChange('In progress')"
+                        >
                     </label>
                     <label class="dropdown-item">
                         <span><span class="dot done"></span> Done</span>
-                        <input type="radio" name="status">
+                        <input
+                            type="radio"
+                            name="status"
+                            (change)="onStatusChange('Done')"
+                        >
                     </label>
                 </div>
             </details>
@@ -43,37 +60,83 @@
             <details class="custom-dropdown-details">
                 <summary>All <i class="fas fa-chevron-down"></i></summary>
                 <div class="dropdown-content">
-                    <label class="dropdown-item">High <input type="radio" name="prio"></label>
-                    <label class="dropdown-item">Medium <input type="radio" name="prio"></label>
-                    <label class="dropdown-item">Low <input type="radio" name="prio"></label>
+                    <label class="dropdown-item">
+                        High
+                        <input
+                            type="radio"
+                            name="prio"
+                            (change)="onPriorityChange('high')"
+                        >
+                    </label>
+                    <label class="dropdown-item">
+                        Medium
+                        <input
+                            type="radio"
+                            name="prio"
+                            (change)="onPriorityChange('medium')"
+                        >
+                    </label>
+                    <label class="dropdown-item">
+                        Low
+                        <input
+                            type="radio"
+                            name="prio"
+                            (change)="onPriorityChange('low')"
+                        >
+                    </label>
                 </div>
             </details>
         </div>
     </div>
 
-    <div class="task-item-card">
+    <div *ngIf="!filteredTasks || filteredTasks.length === 0" class="task-item-card">
         <div class="task-info">
-            <h3>Task 1</h3>
-            <p class="description">Design and refine user interface layouts in Figma, creating intuitive, visually
-                consistent, and user-friendly digital experiences.</p>
-            <div class="task-footer">
-                <div class="action-btns">
-                    <button class="edit-btn">Edit</button>
-                    <button class="delete-btn">Delete</button>
-                </div>
-                <div class="tags-section">
-                    <span class="status-tag">DONE</span>
-                    <span class="priority-text">Priority: HIGH</span>
-                </div>
-            </div>
+            <h3>No tasks found</h3>
+            <p class="description">Aucune tâche n'est disponible pour le moment.</p>
         </div>
     </div>
 
-    <div class="pagination">
-        <button class="page-btn">Prev</button>
-        <span class="page-info">Page 1/1</span>
-        <button class="page-btn">Next</button>
+<div class="task-item-card" *ngFor="let task of pagedTasks">
+  <div class="task-info">
+    <h3>{{ task.title }}</h3>
+
+    <p class="description">
+      {{ task.description }}
+    </p>
+
+    <div class="task-footer">
+      <div class="action-btns">
+        <button class="edit-btn">Edit</button>
+        <button class="delete-btn">Delete</button>
+      </div>
+
+      <div class="tags-section">
+        <span class="status-tag">{{ task.status }}</span>
+        <span class="priority-text">
+          Priorité : {{ task.priority }}
+        </span>
+      </div>
     </div>
+  </div>
+</div>
+
+ <div class="pagination">
+  <button class="page-btn"
+          (click)="goToPrevPage()"
+          [disabled]="currentPage === 1">
+    Prev
+  </button>
+
+  <span class="page-info">
+    Page {{ currentPage }}/{{ totalPages }}
+  </span>
+
+  <button class="page-btn"
+          (click)="goToNextPage()"
+          [disabled]="currentPage === totalPages">
+    Next
+  </button>
+</div>
 </main>
 
 <footer class="footer">

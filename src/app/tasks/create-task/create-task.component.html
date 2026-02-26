@@ -4,39 +4,59 @@
     <div class="card">
         <h2>Create Task</h2>
 
-        <form (submit)="onSave($event)">
+        <!-- Bind form to taskForm -->
+        <form [formGroup]="taskForm" (ngSubmit)="onSave()">
+
             <div class="input-group">
                 <label>Title</label>
-                <input type="text" placeholder="Title" required>
+                <input 
+                    type="text" 
+                    placeholder="Title"
+                    formControlName="title">
+                
+                <small *ngIf="taskForm.get('title')?.touched && taskForm.get('title')?.invalid">
+                    Title is required (min 3 characters)
+                </small>
             </div>
 
             <div class="input-group">
                 <label>Description</label>
-                <textarea placeholder="Description" required></textarea>
+                <textarea 
+                    placeholder="Description"
+                    formControlName="description">
+                </textarea>
+
+                <small *ngIf="taskForm.get('description')?.touched && taskForm.get('description')?.invalid">
+                    Description is required
+                </small>
             </div>
 
             <div class="row">
                 <div class="col">
                     <label>Status</label>
-                    <select>
-                        <option>TODO</option>
-                        <option>IN PROGRESS</option>
-                        <option>DONE</option>
+                    <select formControlName="status">
+                        <option value="TODO">TODO</option>
+                        <option value="IN PROGRESS">IN PROGRESS</option>
+                        <option value="DONE">DONE</option>
                     </select>
                 </div>
 
                 <div class="col">
                     <label>Priority</label>
-                    <select>
-                        <option>LOW</option>
-                        <option selected>MEDIUM</option>
-                        <option>HIGH</option>
+                    <select formControlName="priority">
+                        <option value="LOW">LOW</option>
+                        <option value="MEDIUM">MEDIUM</option>
+                        <option value="HIGH">HIGH</option>
                     </select>
                 </div>
 
                 <div class="col">
                     <label>Due Date</label>
-                    <input type="date">
+                    <input type="date" formControlName="dueDate">
+
+                    <small *ngIf="taskForm.get('dueDate')?.touched && taskForm.get('dueDate')?.invalid">
+                        Due date is required
+                    </small>
                 </div>
             </div>
 
@@ -44,6 +64,7 @@
                 <button type="submit" class="save-btn">Save Task</button>
                 <button type="button" class="cancel-btn" (click)="onCancel()">Cancel</button>
             </div>
+
         </form>
     </div>
 </main>

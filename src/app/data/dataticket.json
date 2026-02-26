@@ -1,0 +1,94 @@
+[
+  {
+    "id": 1,
+    "title": "Fix login bug",
+    "description": "Fix login bug",
+    "priority": "high",
+    "status": "To do"
+  },
+  {
+    "id": 2,
+    "title": "Update user profile page",
+    "description": "Update user profile page",
+    "priority": "medium",
+    "status": "In progress"
+  },
+  {
+    "id": 3,
+    "title": "Implement search feature",
+    "description": "Implement search feature",
+    "priority": "low",
+    "status": "Done"
+  }
+  ,
+  {
+    "id": 4,
+    "title": "Improve error handling",
+    "description": "Add better error messages across the app",
+    "priority": "medium",
+    "status": "To do"
+  },
+  {
+    "id": 5,
+    "title": "Add unit tests",
+    "description": "Write unit tests for auth and tasks",
+    "priority": "high",
+    "status": "In progress"
+  },
+  {
+    "id": 6,
+    "title": "Optimize images",
+    "description": "Compress and lazy-load images",
+    "priority": "low",
+    "status": "To do"
+  },
+  {
+    "id": 7,
+    "title": "Fix CSS layout on mobile",
+    "description": "Resolve layout issues on small screens",
+    "priority": "high",
+    "status": "In progress"
+  },
+  {
+    "id": 8,
+    "title": "Add search filters",
+    "description": "Allow filtering tasks by priority and status",
+    "priority": "medium",
+    "status": "To do"
+  },
+  {
+    "id": 9,
+    "title": "Email notifications",
+    "description": "Send email when task assigned",
+    "priority": "low",
+    "status": "Done"
+  },
+  {
+    "id": 10,
+    "title": "Refactor task service",
+    "description": "Clean up and document the task service",
+    "priority": "medium",
+    "status": "In progress"
+  },
+  {
+    "id": 11,
+    "title": "Improve accessibility",
+    "description": "Add ARIA attributes and keyboard navigation",
+    "priority": "high",
+    "status": "To do"
+  },
+  {
+    "id": 12,
+    "title": "Add dark mode",
+    "description": "Support theme switching",
+    "priority": "low",
+    "status": "To do"
+  },
+  {
+    "id": 13,
+    "title": "Export CSV",
+    "description": "Allow exporting tickets to CSV",
+    "priority": "medium",
+    "status": "Done"
+  }
+]

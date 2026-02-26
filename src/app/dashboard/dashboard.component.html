@@ -1,40 +1,111 @@
 <app-navbar></app-navbar>
 
 <main class="dashboard-container">
-    <div class="dashboard-main-card">
-        <div class="dashboard-header">
-            <i class="fas fa-th-large"></i>
-            <h2>Dashboard</h2>
-        </div>
+  <div class="dashboard-main-card">
 
-        <div class="content-wrapper">
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <span class="stat-title">Total Tasks</span>
-                    <span class="stat-value">10</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-title">TODO</span>
-                    <span class="stat-value">2</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-title">IN_PROGRESS</span>
-                    <span class="stat-value">2</span>
-                </div>
-                <div class="stat-card">
-                    <span class="stat-title">DONE</span>
-                    <span class="stat-value">6</span>
-                </div>
-            </div>
-
-            <div class="chart-section">
-                <div class="pie-chart"></div>
-                <div class="chart-legend">
-                    <div class="legend-item"><span class="dot done"></span> DONE</div>
-                    <div class="legend-item"><span class="dot progress"></span> IN_PROGRESS</div>
-                    <div class="legend-item"><span class="dot todo"></span> TODO</div>
-                </div>
-            </div>
-        </div>
+    <div class="dashboard-header">
+      <i class="fas fa-th-large"></i>
+      <h2>Dashboard</h2>
     </div>
+
+    <div class="content-wrapper">
+
+      <!-- LEFT SIDE -->
+      <div class="stats-column">
+
+        <!-- STATUS ROW -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-title">Total Tasks</span>
+            <span class="stat-value">{{ totalTasks }}</span>
+          </div>
+
+          <div class="stat-card">
+            <span class="stat-title">TODO</span>
+            <span class="stat-value">{{ todoCount }}</span>
+          </div>
+
+          <div class="stat-card">
+            <span class="stat-title">IN_PROGRESS</span>
+            <span class="stat-value">{{ inProgressCount }}</span>
+          </div>
+
+          <div class="stat-card">
+            <span class="stat-title">DONE</span>
+            <span class="stat-value">{{ doneCount }}</span>
+          </div>
+        </div>
+
+        <!-- PRIORITY ROW -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-title">HIGH PRIORITY</span>
+            <span class="stat-value">{{ highPriorityCount }}</span>
+          </div>
+
+          <div class="stat-card">
+            <span class="stat-title">MEDIUM PRIORITY</span>
+            <span class="stat-value">{{ mediumPriorityCount }}</span>
+          </div>
+
+          <div class="stat-card">
+            <span class="stat-title">LOW PRIORITY</span>
+            <span class="stat-value">{{ lowPriorityCount }}</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- RIGHT SIDE (PIE CHART) -->
+      <div class="chart-section">
+
+        <div class="chart-values">
+          <div class="chart-value done">
+            <span class="label">DONE</span>
+            <span class="value">
+              {{ doneCount }} ({{ donePercent | number:'1.0-0' }}%)
+            </span>
+          </div>
+
+          <div class="chart-value progress">
+            <span class="label">IN_PROGRESS</span>
+            <span class="value">
+              {{ inProgressCount }} ({{ inProgressPercent | number:'1.0-0' }}%)
+            </span>
+          </div>
+
+          <div class="chart-value todo">
+            <span class="label">TODO</span>
+            <span class="value">
+              {{ todoCount }} ({{ todoPercent | number:'1.0-0' }}%)
+            </span>
+          </div>
+        </div>
+
+        <div class="pie-chart"
+          [ngStyle]="{
+            'background': 'conic-gradient(' +
+              '#9CAB84 0 ' + donePercent + '%, ' +
+              '#D2DBBC ' + donePercent + '% ' + (donePercent + inProgressPercent) + '%, ' +
+              '#E8EDD9 ' + (donePercent + inProgressPercent) + '% 100%)'
+          }">
+        </div>
+
+        <div class="chart-legend">
+          <div class="legend-item">
+            <span class="dot done"></span> DONE
+          </div>
+          <div class="legend-item">
+            <span class="dot progress"></span> IN_PROGRESS
+          </div>
+          <div class="legend-item">
+            <span class="dot todo"></span> TODO
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
 </main>
